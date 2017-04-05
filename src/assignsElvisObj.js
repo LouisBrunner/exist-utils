@@ -1,4 +1,4 @@
-import exists from './exists';
+import { exists } from './exists';
 
 export const assignsElvisObj = (obj, prop, value) => {
   if (!exists(obj[prop])) {

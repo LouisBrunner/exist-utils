@@ -1,4 +1,4 @@
-import exists from './exists';
+import { exists } from './exists';
 
 export const elvis = (value, def) => {
   return exists(value) ? value : def;

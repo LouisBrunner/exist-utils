@@ -1,4 +1,4 @@
-import exists from './exists';
+import { exists } from './exists';
 
 export const existsChainedValue = (obj, ...props) => {
   if (!exists(obj)) {

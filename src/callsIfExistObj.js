@@ -1,9 +1,9 @@
 import isFunction from 'lodash/isFunction';
-import exists from './exists';
+import { exists } from './exists';
 
 export const callsIfExistObj = (obj, func, ...args) => {
-  if (exists(obj) && exists(func) && isFunction(func)) {
-    return func.apply(obj, args);
+  if (exists(obj) && exists(func) && isFunction(obj[func])) {
+    return obj[func].apply(obj, args);
   }
 };
 
