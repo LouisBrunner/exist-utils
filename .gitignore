@@ -1,0 +1,14 @@
+# OS files
+.DS_Store
+
+# Output
+/*.js
+!webpack.config.js
+
+# npm
+node_modules
+npm-debug.log
+
+# Code coverage
+.nyc_output
+coverage

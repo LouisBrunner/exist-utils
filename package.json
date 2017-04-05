@@ -1,0 +1,61 @@
+{
+  "name": "exist-utils",
+  "version": "1.0.0",
+  "description": "Util functions ",
+  "author": "Louis Brunner <louis.brunner.fr@gmail.com> (https://github.com/LouisBrunner)",
+  "license": "MIT",
+  "keywords": [
+    "coffee",
+    "coffeescript",
+    "coffee-script",
+    "existence",
+    "exist",
+    "?",
+    "elvis",
+    "utils"
+  ],
+  "main": "index.js",
+  "scripts": {
+    "build:lib": "babel src --out-dir . --ignore _spec.js",
+    "build:dist": "webpack",
+    "build": "npm run build:lib && npm run build:dist",
+    "lint": "eslint .",
+    "test": "NODE_ENV=test NODE_PATH=$NODE_PATH:$PWD nyc mocha --opts ./.mocha.opts",
+    "test:watch": "watch-run -i -p 'src/**/*' npm run test",
+    "travis-test": "NODE_ENV=test NODE_PATH=$NODE_PATH:$PWD nyc --reporter=lcov mocha --opts ./.mocha.opts",
+    "travis-coverage": "cat ./coverage/lcov.info | coveralls",
+    "prepush": "npm run lint && npm run test && npm run build:dist",
+    "prepare": "npm run lint && npm run test && npm run build:lib"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/LouisBrunner/exist-utils"
+  },
+  "bugs": {
+    "url": "https://github.com/LouisBrunner/exist-utils/issues"
+  },
+  "homepage": "https://github.com/LouisBrunner/exist-utils",
+  "dependencies": {
+    "lodash": "^4.17.4"
+  },
+  "devDependencies": {
+    "babel-cli": "^6.24.0",
+    "babel-eslint": "^7.2.0",
+    "babel-loader": "^6.4.1",
+    "babel-plugin-istanbul": "^4.0.0",
+    "babel-preset-es2015": "^6.24.0",
+    "babel-register": "^6.24.0",
+    "chai": "^3.5.0",
+    "coveralls": "^2.12.0",
+    "eslint": "^3.18.0",
+    "eslint-loader": "^1.6.3",
+    "mocha": "^3.2.0",
+    "nyc": "^10.1.2",
+    "sinon": "^2.1.0",
+    "sinon-chai": "^2.9.0",
+    "watch-run": "^1.2.5",
+    "webpack": "^2.3.1",
+    "webpack-dev-server": "^2.4.2",
+    "webpack-merge": "^4.1.0"
+  }
+}
