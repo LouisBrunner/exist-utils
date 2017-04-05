@@ -1,3 +1,4 @@
+/* eslint-disable no-unused-expressions */
 import { expect } from 'tests/framework';
 
 import { existsChainedValue, excv } from '../existsChainedValue';

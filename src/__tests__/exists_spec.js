@@ -1,3 +1,4 @@
+/* eslint-disable no-unused-expressions */
 import { expect } from 'tests/framework';
 
 import { exists, ex } from '../exists';
@@ -9,7 +10,7 @@ describe('elvis function', () => {
   });
 
   it('is true with something ("")', () => {
-    expect(exists("")).to.equal(true);
+    expect(exists('')).to.equal(true);
   });
 
   it('is true with something (0)', () => {

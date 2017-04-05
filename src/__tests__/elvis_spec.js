@@ -1,3 +1,4 @@
+/* eslint-disable no-unused-expressions */
 import { expect } from 'tests/framework';
 
 import { elvis, el } from '../elvis';
@@ -9,7 +10,7 @@ describe('elvis function', () => {
   });
 
   it('returns the first value ("")', () => {
-    expect(elvis("", 'hello')).to.equal("");
+    expect(elvis('', 'hello')).to.equal('');
   });
 
   it('returns the first value (0)', () => {
