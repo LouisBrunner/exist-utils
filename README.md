@@ -23,12 +23,74 @@ It exports a global `window.ExistUtils` when imported as a `<script>` tag.
 ## Usage
 
 Each function as a full name (i.e. `exists`) and a shorthand (i.e. `ex`), both are specified in the title of their description.
+You can check the equivalence with _CoffeeScript_ operators in the [following section](#coffeescript-equivalents).
 
-### TODO
+### `exists` (`ex`)
+
+Example:
+```js
+if (!exists(arg)) {
+  error('missing arg');
+}
+```
+
+This is the equivalent to _CoffeeScript_ `val?`, it checks if a value "exists" (is neither `null` nor `undefined`).
+
+### `existsChained` (`exc`)
+
+Example:
+```js
+if (!existsChained(arg, 'callback')) {
+  error('no callback specified');
+}
+```
+
+This is the equivalent to _CoffeeScript_ `obj?.prop?`, it checks if a whole chain "exists".
+
+### `existsChainedValue` (`excv`)
+
+Example:
+```js
+const callback = existsChainedValue(arg, 'callback');
+if (!exists(callback)) {
+  error('no callback specified');
+  return;
+}
+callback();
+```
+
+This is the equivalent to _CoffeeScript_ `obj?.prop`, it checks if a whole chain "exists" and returns the final value.
+
+### `elvis` (`el`)
+
+Example:
+```js
+val = elvis(arg, 42);
+```
+
+This is the equivalent to _CoffeeScript_ `val ? default` and a safer version to `val || default`.
+It returns the second value if the first one doesn't "exist".
+
+### `callsIfExist` (`fnex`)
+
+Example:
+```js
+callsIfExist(func, 1, 2);
+```
+
+This is the equivalent to _CoffeeScript_ `func?(1, 2)`, it checks the existence of the function and calls it with the provided arguments.
+
+### `callsIfExistObj` (`fnexo`)
+
+Example:
+```js
+callsIfExistObj(obj, 'func', 1, 2);
+```
+
+This is the equivalent to _CoffeeScript_ `obj?.func?(1, 2)`, it checks the existence of the function and calls it with the provided arguments while providing the right value for `this`.
 
 
-
-## CoffeeScript equivalents
+## _CoffeeScript_ equivalents
 
 | CoffeeScript             | `exist-utils`                      | `exist-utils` shorthand    |
 |:-------------------------|:-----------------------------------|:---------------------------|
