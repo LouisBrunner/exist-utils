@@ -22,9 +22,22 @@ It exports a global `window.ExistUtils` when imported as a `<script>` tag.
 
 ## Usage
 
-Every code snippet will be presented in 3 different styles: Node.js `require`, Node.js `import` and Browser Javascript (with required HTML `<script>`s).
+Each function as a full name (i.e. `exists`) and a shorthand (i.e. `ex`), both are specified in the title of their description.
 
 ### TODO
+
+
+
+## CoffeeScript equivalents
+
+| CoffeeScript             | `exist-utils`                      | `exist-utils` shorthand    |
+|:-------------------------|:-----------------------------------|:---------------------------|
+| `val?`                   | `exists(val)`                      | `ex(val)`                  |
+| `obj?.prop?`             | `existsChained(obj, 'prop')`       | `exc(obj, 'prop')`         |
+| `obj?.prop`              | `existsChainedValue(obj, 'prop')`  | `excv(obj, 'prop')`        |
+| `val = arg ? 3`          | `val = elvis(arg, 3)`              | `val = el(arg, 3)`         |
+| `func?(a, b)`            | `callsIfExist(func, a, b)`         | `fnex(func, a, b)`         |
+| `obj.func?(a, b)`        | `callsIfExistObj(obj, func, a, b)` | `fnexo(obj, func, a, b)`   |
 
 
 ## License
