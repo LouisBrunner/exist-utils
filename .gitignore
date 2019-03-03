@@ -3,7 +3,8 @@
 
 # Output
 /*.js
-!webpack.config.js
+/__tests__
+!*.config.js
 
 # npm
 node_modules

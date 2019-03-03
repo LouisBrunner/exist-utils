@@ -1,44 +1,41 @@
-/* eslint-disable no-unused-expressions */
-import { expect } from 'tests/framework';
-
 import { existsChained, exc } from '../existsChained';
 
 describe('existsChained function', () => {
-  it('has no object', () => {
-    expect(existsChained(undefined, 'a', 'b')).to.equal(false);
+  test('has no object', () => {
+    expect(existsChained(undefined, 'a', 'b')).toBe(false);
   });
 
-  it('found (1 prop)', () => {
+  test('found (1 prop)', () => {
     const obj = {a: 1};
-    expect(existsChained(obj, 'a')).to.equal(true);
+    expect(existsChained(obj, 'a')).toBe(true);
   });
 
-  it('not found (1 prop)', () => {
+  test('not found (1 prop)', () => {
     const obj = {b: 1};
-    expect(existsChained(obj, 'a')).to.equal(false);
+    expect(existsChained(obj, 'a')).toBe(false);
   });
 
-  it('found (2 props)', () => {
+  test('found (2 props)', () => {
     const obj = {a: {b: 2}};
-    expect(existsChained(obj, 'a', 'b')).to.equal(true);
+    expect(existsChained(obj, 'a', 'b')).toBe(true);
   });
 
-  it('not found (2 props)', () => {
+  test('not found (2 props)', () => {
     const obj = {a: {c: 2}};
-    expect(existsChained(obj, 'a', 'b')).to.equal(false);
+    expect(existsChained(obj, 'a', 'b')).toBe(false);
   });
 
-  it('found (3 props)', () => {
+  test('found (3 props)', () => {
     const obj = {a: {b: {c: 3}}};
-    expect(existsChained(obj, 'a', 'b', 'c')).to.equal(true);
+    expect(existsChained(obj, 'a', 'b', 'c')).toBe(true);
   });
 
-  it('not found (3 props)', () => {
+  test('not found (3 props)', () => {
     const obj = {a: {b: {b: 3}}};
-    expect(existsChained(obj, 'a', 'b', 'c')).to.equal(false);
+    expect(existsChained(obj, 'a', 'b', 'c')).toBe(false);
   });
 
-  it('has a shortcut (exc)', () => {
-    expect(exc).to.equal(existsChained);
+  test('has a shortcut (exc)', () => {
+    expect(exc).toBe(existsChained);
   });
 });

@@ -1,21 +1,17 @@
-/* eslint-disable no-unused-expressions */
-import { expect, sinon } from 'tests/framework';
-
 import { callsIfExist, fnex } from '../callsIfExist';
 
 describe('callsIfExist function', () => {
-  it('calls the function (exists)', () => {
-    const func = sinon.stub().returns(42);
-    expect(callsIfExist(func, 'abc', {})).to.equal(42);
-    expect(func).to.have.been.calledOnce;
-    expect(func).to.have.been.calledWithExactly('abc', {});
+  test('calls the function (exists)', () => {
+    const func = jest.fn().mockReturnValueOnce(42);
+    expect(callsIfExist(func, 'abc', {})).toBe(42);
+    expect(func).toHaveBeenCalledWith('abc', {});
   });
 
-  it('does nothing (doesn\'t exist)', () => {
-    expect(callsIfExist(undefined)).to.be.undefined;
+  test('does nothing (doesn\'t exist)', () => {
+    expect(callsIfExist(undefined)).toBeUndefined();
   });
 
-  it('has a shortcut (fnex)', () => {
-    expect(fnex).to.equal(callsIfExist);
+  test('has a shortcut (fnex)', () => {
+    expect(fnex).toBe(callsIfExist);
   });
 });

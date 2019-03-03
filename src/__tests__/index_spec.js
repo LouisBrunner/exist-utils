@@ -1,29 +1,26 @@
-/* eslint-disable no-unused-expressions */
-import { expect } from 'tests/framework';
-
 import * as ExistUtils from '../index';
 
 describe('ExistUtils module', () => {
-  it('defines all the expected functions', () => {
-    expect(ExistUtils.assignsElvisObj).to.be.an.instanceof(Function);
-    expect(ExistUtils.eqelo).to.be.an.instanceof(Function);
+  test('defines all the expected functions', () => {
+    expect(ExistUtils.assignsElvisObj).toBeInstanceOf(Function);
+    expect(ExistUtils.eqelo).toBeInstanceOf(Function);
 
-    expect(ExistUtils.callsIfExist).to.be.an.instanceof(Function);
-    expect(ExistUtils.fnex).to.be.an.instanceof(Function);
+    expect(ExistUtils.callsIfExist).toBeInstanceOf(Function);
+    expect(ExistUtils.fnex).toBeInstanceOf(Function);
 
-    expect(ExistUtils.callsIfExistObj).to.be.an.instanceof(Function);
-    expect(ExistUtils.fnexo).to.be.an.instanceof(Function);
+    expect(ExistUtils.callsIfExistObj).toBeInstanceOf(Function);
+    expect(ExistUtils.fnexo).toBeInstanceOf(Function);
 
-    expect(ExistUtils.elvis).to.be.an.instanceof(Function);
-    expect(ExistUtils.el).to.be.an.instanceof(Function);
+    expect(ExistUtils.elvis).toBeInstanceOf(Function);
+    expect(ExistUtils.el).toBeInstanceOf(Function);
 
-    expect(ExistUtils.exists).to.be.an.instanceof(Function);
-    expect(ExistUtils.ex).to.be.an.instanceof(Function);
+    expect(ExistUtils.exists).toBeInstanceOf(Function);
+    expect(ExistUtils.ex).toBeInstanceOf(Function);
 
-    expect(ExistUtils.existsChained).to.be.an.instanceof(Function);
-    expect(ExistUtils.exc).to.be.an.instanceof(Function);
+    expect(ExistUtils.existsChained).toBeInstanceOf(Function);
+    expect(ExistUtils.exc).toBeInstanceOf(Function);
 
-    expect(ExistUtils.existsChainedValue).to.be.an.instanceof(Function);
-    expect(ExistUtils.excv).to.be.an.instanceof(Function);
+    expect(ExistUtils.existsChainedValue).toBeInstanceOf(Function);
+    expect(ExistUtils.excv).toBeInstanceOf(Function);
   });
 });

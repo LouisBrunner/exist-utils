@@ -1,35 +1,32 @@
-/* eslint-disable no-unused-expressions */
-import { expect } from 'tests/framework';
-
 import { exists, ex } from '../exists';
 
 describe('elvis function', () => {
-  it('is true with something ({})', () => {
+  test('is true with something ({})', () => {
     const obj = {secret: Math.random()};
-    expect(exists(obj)).to.equal(true);
+    expect(exists(obj)).toBe(true);
   });
 
-  it('is true with something ("")', () => {
-    expect(exists('')).to.equal(true);
+  test('is true with something ("")', () => {
+    expect(exists('')).toBe(true);
   });
 
-  it('is true with something (0)', () => {
-    expect(exists(0)).to.equal(true);
+  test('is true with something (0)', () => {
+    expect(exists(0)).toBe(true);
   });
 
-  it('is true with something (false)', () => {
-    expect(exists(false)).to.equal(true);
+  test('is true with something (false)', () => {
+    expect(exists(false)).toBe(true);
   });
 
-  it('is false with nothing (undefined)', () => {
-    expect(exists(undefined)).to.equal(false);
+  test('is false with nothing (undefined)', () => {
+    expect(exists(undefined)).toBe(false);
   });
 
-  it('is false with nothing (null)', () => {
-    expect(exists(null)).to.equal(false);
+  test('is false with nothing (null)', () => {
+    expect(exists(null)).toBe(false);
   });
 
-  it('has a shortcut (ex)', () => {
-    expect(ex).to.equal(exists);
+  test('has a shortcut (ex)', () => {
+    expect(ex).toBe(exists);
   });
 });

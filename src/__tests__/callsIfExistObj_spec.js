@@ -1,37 +1,33 @@
-/* eslint-disable no-unused-expressions */
-import { expect, sinon } from 'tests/framework';
-
 import { callsIfExistObj, fnexo } from '../callsIfExistObj';
 
 describe('callsIfExistObj function', () => {
-  it('calls the function (obj & func exist)', () => {
+  test('calls the function (obj & func exist)', () => {
     const obj = {};
-    const func = sinon.spy(function spy() {
-      expect(this).to.equal(obj);
+    const func = jest.fn().mockImplementation(function spy() {
+      expect(this).toBe(obj);
       return 42;
     });
     obj.func = func;
-    expect(callsIfExistObj(obj, 'func', 'abc', {})).to.be.equal(42);
-    expect(func).to.have.been.calledOnce;
-    expect(func).to.have.been.calledWithExactly('abc', {});
+    expect(callsIfExistObj(obj, 'func', 'abc', {})).toBe(42);
+    expect(func).toHaveBeenCalledWith('abc', {});
   });
 
-  it('does nothing (func doesn\'t exist)', () => {
+  test('does nothing (func doesn\'t exist)', () => {
     const obj = {};
-    const func = sinon.spy(() => {
-      expect(this).to.equal(obj);
+    const func = jest.fn().mockImplementation(() => {
+      expect(this).toBe(obj);
       return 42;
     });
     obj.func2 = func;
-    expect(callsIfExistObj(obj, 'func', 'abc', {})).to.be.undefined;
-    expect(func).not.to.have.been.called;
+    expect(callsIfExistObj(obj, 'func', 'abc', {})).toBeUndefined();
+    expect(func).not.toHaveBeenCalled();
   });
 
-  it('does nothing (obj doesn\'t exist)', () => {
-    expect(callsIfExistObj(undefined, 'func', 'abc', {})).to.be.undefined;
+  test('does nothing (obj doesn\'t exist)', () => {
+    expect(callsIfExistObj(undefined, 'func', 'abc', {})).toBeUndefined();
   });
 
-  it('has a shortcut (fnexo)', () => {
-    expect(fnexo).to.equal(callsIfExistObj);
+  test('has a shortcut (fnexo)', () => {
+    expect(fnexo).toBe(callsIfExistObj);
   });
 });
