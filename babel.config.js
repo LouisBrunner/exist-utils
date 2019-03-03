@@ -4,10 +4,10 @@ const generatePresets = ({modules} = {}) => {
       modules: modules ? 'commonjs' : undefined,
       targets: {
         browsers: [
-          "last 1 version",
-          "> 1%",
-          "maintained node versions",
-          "not dead",
+          'last 1 version',
+          '> 1%',
+          'maintained node versions',
+          'not dead',
         ],
       },
       debug: true,

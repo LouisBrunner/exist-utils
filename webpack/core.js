@@ -1,4 +1,4 @@
-module.exports = function wpConfig() {
+module.exports = () => {
   return {
     module: {
       rules: [
