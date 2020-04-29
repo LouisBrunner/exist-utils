@@ -23,8 +23,7 @@
     "lint": "eslint .",
     "test": "jest --config jest.config.js",
     "test:watch": "npm run test -- --watch",
-    "travis:test": "CI=yes npm run test",
-    "travis:coverage": "cat ./coverage/lcov.info | coveralls",
+    "test:ci": "CI=yes npm run test",
     "prepush": "npm run lint && npm run test && npm run build:dist",
     "prepare": "npm run clean && npm run lint && npm run test && npm run build:lib"
   },
@@ -48,7 +47,6 @@
     "babel-loader": "^8.1.0",
     "bufferutil": "^4.0.1",
     "canvas": "^2.6.1",
-    "coveralls": "^3.1.0",
     "eslint": "^6.8.0",
     "eslint-loader": "^4.0.2",
     "jest": "^25.5.1",

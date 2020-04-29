@@ -1,4 +1,4 @@
-# exist-utils [![NPM Version][npm-image]][npm-url] [![Build Status][travis-image]][travis-url] [![Coverage Status][coveralls-image]][coveralls-url] [![dependencies Status][deps-image]][deps-url] [![devDependencies Status][deps-dev-image]][deps-dev-url]
+# exist-utils [![NPM Version][npm-image]][npm-url] ![Build Status][ci-image] [![Coverage Status][coveralls-image]][coveralls-url] [![dependencies Status][deps-image]][deps-url] [![devDependencies Status][deps-dev-image]][deps-dev-url]
 
 This package is a collection of util functions that emulate _CoffeeScript_ existence operator.
 While waiting that some of them are integrated in the [next version of JavaScript](https://github.com/tc39/proposals), you can use this package while porting from _CoffeeScript_, etc.
@@ -104,14 +104,13 @@ This is the equivalent to _CoffeeScript_ `obj?.func?(1, 2)`, it checks the exist
 
 ## License
 
-MIT, Copyright (c) 2017 Louis Brunner
+MIT, Copyright (c) 2017-2020 Louis Brunner
 
 
 
 [npm-image]: https://img.shields.io/npm/v/exist-utils.svg
 [npm-url]: https://npmjs.org/package/exist-utils
-[travis-image]: https://travis-ci.org/LouisBrunner/exist-utils.svg?branch=master
-[travis-url]: https://travis-ci.org/LouisBrunner/exist-utils
+[ci-image]: https://github.com/LouisBrunner/exist-utils/workflows/Build/badge.svg
 [coveralls-image]: https://coveralls.io/repos/github/LouisBrunner/exist-utils/badge.svg?branch=master
 [coveralls-url]: https://coveralls.io/github/LouisBrunner/exist-utils?branch=master
 [deps-image]: https://david-dm.org/louisbrunner/exist-utils/status.svg
