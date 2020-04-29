@@ -37,21 +37,24 @@
   },
   "homepage": "https://github.com/LouisBrunner/exist-utils",
   "dependencies": {
-    "lodash": "^4.17.4"
+    "lodash": "^4.17.15"
   },
   "devDependencies": {
-    "@babel/cli": "^7.2.3",
-    "@babel/core": "^7.3.4",
-    "@babel/preset-env": "^7.3.4",
-    "babel-eslint": "^10.0.1",
-    "babel-jest": "^24.1.0",
-    "babel-loader": "^8.0.5",
-    "coveralls": "^3.0.3",
-    "eslint": "^5.15.0",
-    "eslint-loader": "^2.1.2",
-    "jest": "^24.1.0",
-    "webpack": "^4.29.6",
-    "webpack-cli": "^3.2.3",
-    "webpack-merge": "^4.1.0"
+    "@babel/cli": "^7.8.4",
+    "@babel/core": "^7.9.6",
+    "@babel/preset-env": "^7.9.6",
+    "babel-eslint": "^10.1.0",
+    "babel-jest": "^25.5.1",
+    "babel-loader": "^8.1.0",
+    "bufferutil": "^4.0.1",
+    "canvas": "^2.6.1",
+    "coveralls": "^3.1.0",
+    "eslint": "^6.8.0",
+    "eslint-loader": "^4.0.2",
+    "jest": "^25.5.1",
+    "utf-8-validate": "^5.0.2",
+    "webpack": "^4.43.0",
+    "webpack-cli": "^3.3.11",
+    "webpack-merge": "^4.2.2"
   }
 }
