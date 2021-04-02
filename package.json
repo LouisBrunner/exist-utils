@@ -1,6 +1,6 @@
 {
   "name": "exist-utils",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "Utility functions that emulate CoffeeScript existence operator",
   "author": "Louis Brunner <louis.brunner.fr@gmail.com> (https://github.com/LouisBrunner)",
   "license": "MIT",
